@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d1f808f-f384-4d3f-8835-6e397c586f7f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkmusic/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkmusic/instrument.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkmusic/mclass.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkmusic/readfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkmusic/table.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mkmusic/version.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

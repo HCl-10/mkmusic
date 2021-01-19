@@ -26,6 +26,7 @@ setuptools.setup(
     },
     python_requires='>=3.0',
     install_requires=[
-        'numpy'
+        'numpy',
+        'tqdm'
     ]
 )
