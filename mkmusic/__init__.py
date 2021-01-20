@@ -12,6 +12,7 @@ import numpy as np
 def start_program(args=None):
     parser = argparse.ArgumentParser(prog='mkmusic', description=f'Mkmusic Compiler Version {mkmusic.version.ver}')
     parser.add_argument('-o', '--output', help='the output wave file, default is [file].wav')
+    parser.add_argument('-r', '--rate', help='specify the sample rate of the output file, default is 44100')
     parser.add_argument('-v', '--version', help='show the version of this program and exit', action="store_true")
     parser.add_argument('file', help='the source code file', nargs='?', default='')
     args = parser.parse_args(args)
@@ -20,12 +21,16 @@ def start_program(args=None):
         exit()
     if args.file == '':
         parser.print_help()
-        exit()
+        print('-' * 50)
+        args.file = input("Input file name: ").strip()
     if args.output:
         out_file = args.output
     else:
         out_file = args.file + '.wav'
-    hz = 44100
+    if not args.rate:
+        hz = 44100
+    else:
+        hz = int(args.rate)
     file = read_file(args.file, hz)
     file.convert_time_to_second()
     file.convert_time_to_frame(hz)

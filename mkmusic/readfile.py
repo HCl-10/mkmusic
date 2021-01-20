@@ -36,6 +36,11 @@ def read_file(name, hz) -> Music:
                 base_t = copy.deepcopy(Pulse(int(mth)))
             else:
                 base_t = Pulse(int(mth))
+        elif base_i == 'tri':
+            if deep:
+                base_t = copy.deepcopy(Triangle())
+            else:
+                base_t = Triangle()
         else:
             raise ValueError('Invalid instrument.')
         return base_t
@@ -44,6 +49,7 @@ def read_file(name, hz) -> Music:
         lines = file.readlines()
         mode = ''
         for line in lines:
+            line = line[:-1]
             if not line or line.startswith('#'):
                 continue
             match = re.match(r'^\[(.+?)]$', line)
@@ -144,7 +150,7 @@ def read_file(name, hz) -> Music:
                                     pos += 1
                                 else:
                                     pos += 2
-                        elif pro == 'vol':
+                        elif pro == 'vol' or pro == 'pit':
                             s = value[now_pos]
                             s = vol[s]
                         else:

@@ -65,9 +65,16 @@ class Music:
             time += 60 / bpm
         self.time = time
         for track in self.tracks:
+            track.notes.sort()
+            pointer, pit = 0, 0
             for note in track.notes:
+                while pointer < len(self.metaTrack.events) and self.metaTrack.events[pointer][0] <= note[0]:
+                    if self.metaTrack.events[pointer][1] in ["pit"]:
+                        pit = self.metaTrack.events[pointer][2]
+                    pointer += 1
                 note[0] = stamp[note[0]]
                 note[1] = stamp[note[1]]
+                note[2] += pit
             for prop in track.properties:
                 prop[0] = stamp[prop[0]]
         for ev in self.metaTrack.events:
